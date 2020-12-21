@@ -3,22 +3,16 @@ var generateBtn = document.querySelector("#generate");
 
 // Function to get character length information
 function getLength() {
+
   var length = prompt("Character length of password?");
 
-      if (length < 8) {
+      while (length < 8 || length > 128) {
         alert("Please choose a number between 8 and 128");
         var length = prompt("Character length of password?");
+      }
         return length;
-      } else if (length > 128) {
-        alert("Please choose a number between 8 and 128");
-        var length = prompt("Character length of password?");
-        return length;
-      } else {
-        // return length;
-      console.log(length);
   }
- var length = parseInt(length);
-}
+
 
 //Function to confirm lower case
 function getLowerCase () {
@@ -30,8 +24,7 @@ function getLowerCase () {
       } else {
         alert("No LOWER CASE characters");
       }
-      // return lowerCase;
-      console.log(lowerCase);
+      return lowerCase;
 }
 
 //Function to confirm upper case characters
@@ -44,8 +37,7 @@ function getUpperCase () {
       } else {
         alert("No UPPER CASE characters");
       }
-      // return upperCase;
-      console.log(upperCase);
+      return upperCase;
 }
 
 // Function to confirm numeric characters
@@ -58,8 +50,7 @@ function getNumeric () {
       } else {
         alert("No NUMERIC characters");
       }
-      // return numericChar;
-      console.log(numericChar);
+      return numericChar;
 }
 
 // Function to confirm special characters
@@ -72,20 +63,37 @@ function getSpecial () {
       } else {
         alert("No SPECIAL characters");
       }
-      // return specialChar;
-      console.log(specialChar);
+      return specialChar;
 }
-
-
 
 
 //Function to begin functions on clicking the button
 generateBtn.onclick = function getInfo() {
-  getLength();
-  getLowerCase();
-  getUpperCase();    
-  getNumeric();
-  getSpecial();
+var length = getLength();
+var lowerCase = getLowerCase();
+var upperCase = getUpperCase();    
+var numericChar = getNumeric();
+var specialChar = getSpecial();
+
+console.log(length);
+console.log(lowerCase);
+console.log(upperCase);
+console.log(numericChar);
+console.log(specialChar);
+
+while (lowerCase === false && upperCase === false && numericChar === false && specialChar === false) {
+  alert("Must chose at least one type of character.");
+var lowerCase = getLowerCase();
+var upperCase = getUpperCase();    
+var numericChar = getNumeric();
+var specialChar = getSpecial();
+
+console.log(lowerCase);
+console.log(upperCase);
+console.log(numericChar);
+console.log(specialChar);
+
+}
 }
 
 //Function to generate password.
