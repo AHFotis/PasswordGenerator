@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Functino to get character length information
+// Function to get character length information
 function getLength() {
 var length = prompt("Character length of password?");
 
@@ -15,12 +15,28 @@ var length = prompt("Character length of password?");
     return length;
   } else {
     return length;
+    // console.log(length);
   }
+}
+
+//Function to confirm lower case
+function getLowerCase () {
+
+  var lowerCase = confirm("Include lower case characters?");
+
+ if (lowerCase) {
+   alert("You have confirmed lower case characters.");
+ } else {
+   alert("No lower case characters");
+ }
+ return lowerCase;
+  // console.log(lowerCase);
 }
 
 //Function to begin functions on clicking the button
 generateBtn.onclick = function getInfo() {
   getLength();
+  getLowerCase();
 };
 
 //Function to generate password.
