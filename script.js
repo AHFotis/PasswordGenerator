@@ -14,37 +14,66 @@ function getLength() {
         var length = prompt("Character length of password?");
         return length;
       } else {
-        return length;
-      // console.log(length);
+        // return length;
+      console.log(length);
   }
+ var length = parseInt(length);
 }
 
 //Function to confirm lower case
 function getLowerCase () {
 
-  var lowerCase = confirm("Include LOWER case characters?");
+  var lowerCase = confirm("Include LOWER CASE characters?");
 
       if (lowerCase) {
-        alert("You have confirmed lower case characters.");
+        alert("You have confirmed LOWER CASE characters.");
       } else {
-        alert("No lower case characters");
+        alert("No LOWER CASE characters");
       }
-      return lowerCase;
-      // console.log(lowerCase);
+      // return lowerCase;
+      console.log(lowerCase);
 }
 
 //Function to confirm upper case characters
 function getUpperCase () {
 
-  var upperCase = confirm("Include UPPER case characters?");
+  var upperCase = confirm("Include UPPER CASE characters?");
 
       if (upperCase) {
-        alert("You have confirmed upper case characters.");
+        alert("You have confirmed UPPER CASE characters.");
       } else {
-        alert("No upper case characters");
+        alert("No UPPER CASE characters");
       }
-      return upperCase;
-      // console.log(upperCase);
+      // return upperCase;
+      console.log(upperCase);
+}
+
+// Function to confirm numeric characters
+function getNumeric () {
+
+  var numericChar = confirm("Include NUMERIC characters?");
+
+      if (numericChar) {
+        alert("You have confirmed NUMERIC characters.");
+      } else {
+        alert("No NUMERIC characters");
+      }
+      // return numericChar;
+      console.log(numericChar);
+}
+
+// Function to confirm special characters
+function getSpecial () {
+
+  var specialChar = confirm("Include SPECIAL characters?");
+
+      if (specialChar) {
+        alert("You have confirmed SPECIAL characters.");
+      } else {
+        alert("No SPECIAL characters");
+      }
+      // return specialChar;
+      console.log(specialChar);
 }
 
 
@@ -55,7 +84,9 @@ generateBtn.onclick = function getInfo() {
   getLength();
   getLowerCase();
   getUpperCase();    
-};
+  getNumeric();
+  getSpecial();
+}
 
 //Function to generate password.
 function generatePassword (){
