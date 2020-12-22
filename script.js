@@ -9,11 +9,13 @@ var generateBtn = document.querySelector("#generate");
   var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "~"];
 
 
-//Function to get information
-generateBtn.onclick = function getInfo() {
-  alert("Hello! Let's get started on your password.")
 
-  //Get length
+
+//Function to get information
+function getLength() {
+  // alert("Hello! Let's get started on your password.")
+
+  //Get Length
       var length = prompt("Character length of password (between 8-128)?");
 
         while (length < 8 || length > 128) {
@@ -21,7 +23,19 @@ generateBtn.onclick = function getInfo() {
         var length = prompt("Character length of password (between 8-128)?");
         }
 
-        var length = parseInt(length);
+      var length = parseInt(length);
+
+//Currently returning 2 values, look into this
+          if (isNaN(length)) {
+            alert("Must input numbers");
+            getLength();
+          
+        }
+
+        console.log(length);
+      }
+
+  function getInfo() {      
 
   //Wnat lower case?
       var lowerCase = confirm("Include LOWER CASE characters?");
@@ -84,14 +98,21 @@ generateBtn.onclick = function getInfo() {
                   }
                 }
 
-
-              console.log(length);
-              console.log(lowerCase);
-              console.log(upperCase);
-              console.log(numericChar);
-              console.log(specialChar);
+                console.log(lowerCase);
+                console.log(upperCase);
+                console.log(numericChar);
+                console.log(specialChar);  
+                   
     }
 
+  generateBtn.onclick = function pushInfo () {
+    alert("Hello! Let's get started on your password.")
+    var length = getLength();
+    var info = getInfo();   
+
+    return length, info;
+  }
+    
 //Function to generate password.
 function generatePassword (){
 
