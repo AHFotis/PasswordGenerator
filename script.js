@@ -10,9 +10,8 @@ function getLength() {
         alert("Please choose a number between 8 and 128");
         var length = prompt("Character length of password?");
       }
-        return length;
+      return length
   }
-
 
 //Function to confirm lower case
 function getLowerCase () {
@@ -25,10 +24,11 @@ function getLowerCase () {
         alert("No LOWER CASE characters");
       }
       return lowerCase;
-}
 
-//Function to confirm upper case characters
-function getUpperCase () {
+    }
+
+  //Function to confirm upper case characters
+  function getUpperCase () {
 
   var upperCase = confirm("Include UPPER CASE characters?");
 
@@ -37,6 +37,7 @@ function getUpperCase () {
       } else {
         alert("No UPPER CASE characters");
       }
+
       return upperCase;
 }
 
@@ -81,7 +82,7 @@ console.log(upperCase);
 console.log(numericChar);
 console.log(specialChar);
 
-while (lowerCase === false && upperCase === false && numericChar === false && specialChar === false) {
+while (!lowerCase && !upperCase && !numericChar && !specialChar) {
   alert("Must chose at least one type of character.");
 var lowerCase = getLowerCase();
 var upperCase = getUpperCase();    
