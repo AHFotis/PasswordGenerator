@@ -18,7 +18,7 @@ function getLength() {
   //Get Length
       var length = prompt("Character length of password (between 8-128)?");
       var length = parseInt(length);
-      console.log(length);
+      console.log()
         while (length < 8 || length > 128) {
         alert("Please choose a number between 8 and 128.");
         var length = prompt("Character length of password (between 8-128)?");
@@ -107,7 +107,7 @@ function getLength() {
     var length = getLength();
     var info = getInfo();   
 
-    return length, info;
+  
   }
     
 //Function to generate password.
