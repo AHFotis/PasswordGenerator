@@ -20,19 +20,24 @@ function getLength() {
       charLength = parseInt(charLength);
       console.log()
         while (charLength < 8 || charLength > 128 || isNaN(charLength)) {
-        alert("Please choose a number between 8 and 128.");
+        alert("Please choose and input a number between 8 and 128.");
         charLength = prompt("Character length of password (between 8-128)?");
         }
-
           
        console.log(charLength);
+       return charLength;
       }
       
 //Function to get booleans
-  function getInfo() {      
+  function getInfo() { 
+    
+    var lowerCase = "";
+    var upperCase = "";
+    var numericChar = "";
+    var specialChar = "";
 
   //Wnat lower case?
-      var lowerCase = confirm("Include LOWER CASE characters?");
+      lowerCase = confirm("Include LOWER CASE characters?");
 
           if (lowerCase) {
             alert("You have confirmed LOWER CASE characters.");
@@ -40,7 +45,7 @@ function getLength() {
             alert("No LOWER CASE characters");
           }
   //Want uppercase?
-      var upperCase = confirm("Include UPPER CASE characters?");
+      upperCase = confirm("Include UPPER CASE characters?");
 
           if (upperCase) {
             alert("You have confirmed UPPER CASE characters.");
@@ -48,7 +53,7 @@ function getLength() {
             alert("No UPPER CASE characters");
           }
   //Want numeric?
-      var numericChar = confirm("Include NUMERIC characters?");
+      numericChar = confirm("Include NUMERIC characters?");
 
           if (numericChar) {
             alert("You have confirmed NUMERIC characters.");
@@ -56,7 +61,7 @@ function getLength() {
             alert("No NUMERIC characters");
           }
           
-          var specialChar = confirm("Include SPECIAL characters?");
+      specialChar = confirm("Include SPECIAL characters?");
 
           if (specialChar) {
             alert("You have confirmed SPECIAL characters.");
@@ -64,51 +69,62 @@ function getLength() {
             alert("No SPECIAL characters");
           }
   //Boolean while loop
-          while (!lowerCase && !upperCase && !numericChar && !specialChar) {
+          if (!lowerCase && !upperCase && !numericChar && !specialChar) {
           alert("Must chose at least one type of character. Please answer again.");
-              var lowerCase = confirm("Include LOWER CASE characters?");
+               lowerCase = confirm("Include LOWER CASE characters?");
                   if (lowerCase) {
                     alert("You have confirmed LOWER CASE characters.");
                   } else {
                     alert("No LOWER CASE characters");
                   }
-              var upperCase = confirm("Include UPPER CASE characters?");
+              upperCase = confirm("Include UPPER CASE characters?");
                   if (upperCase) {
                     alert("You have confirmed UPPER CASE characters.");
                   } else {
                     alert("No UPPER CASE characters");
                   }
-              var numericChar = confirm("Include NUMERIC characters?");
+              numericChar = confirm("Include NUMERIC characters?");
                   if (numericChar) {
                     alert("You have confirmed NUMERIC characters.");
                   } else {
                     alert("No NUMERIC characters");
                   }
-              var specialChar = confirm("Include SPECIAL characters?");
+              specialChar = confirm("Include SPECIAL characters?");
                   if (specialChar) {
                     alert("You have confirmed SPECIAL characters.");
                   } else {
                     alert("No SPECIAL characters");
                   }
-                }
-
+                
+          }
                 console.log(lowerCase);
                 console.log(upperCase);
                 console.log(numericChar);
                 console.log(specialChar);  
+
+                return lowerCase, upperCase, numericChar, specialChar;
+          
                    
     }
 
   generateBtn.onclick = function pushInfo () {
     alert("Hello! Let's get started on your password.")
     charLength = getLength();
-    getInfo();  
+    lowerCase = getInfo();  
+    
+ //testing this theory
+    if (lowerCase) {
+      console.log("yes");
+      generatePassword(lower);
+    }
+
 
   
   }
     
 //Function to generate password.
-function generatePassword (){
+function generatePassword (array){
+  
 
 }
 
