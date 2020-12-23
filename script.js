@@ -16,20 +16,22 @@ function getLength() {
   // alert("Hello! Let's get started on your password.")
 
   //Get Length
-      var length = prompt("Character length of password (between 8-128)?");
-      var length = parseInt(length);
+      var charLength = "";
+
+      charLength = prompt("Character length of password (between 8-128)?");
+      charLength = parseInt(charLength);
       console.log()
-        while (length < 8 || length > 128) {
+        while (charLength < 8 || charLength > 128) {
         alert("Please choose a number between 8 and 128.");
-        var length = prompt("Character length of password (between 8-128)?");
+        charLength = prompt("Character length of password (between 8-128)?");
         }
 
-          while (isNaN(length)) {
+          while (isNaN(charLength)) {
             alert("Must input numbers");
-            var length = prompt("Character length of password (between 8-128)?");;
+            charLength = prompt("Character length of password (between 8-128)?");;
         }
 
-        console.log(length);
+        console.log(charLength);
       }
 
   function getInfo() {      
