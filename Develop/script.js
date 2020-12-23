@@ -11,29 +11,24 @@ var generateBtn = document.querySelector("#generate");
 
 
 
-//Function to get information
+//Function to get length
 function getLength() {
-  // alert("Hello! Let's get started on your password.")
-
   //Get Length
       var charLength = "";
 
       charLength = prompt("Character length of password (between 8-128)?");
       charLength = parseInt(charLength);
       console.log()
-        while (charLength < 8 || charLength > 128) {
+        while (charLength < 8 || charLength > 128 || isNaN(charLength)) {
         alert("Please choose a number between 8 and 128.");
         charLength = prompt("Character length of password (between 8-128)?");
         }
 
-          while (isNaN(charLength)) {
-            alert("Must input numbers");
-            charLength = prompt("Character length of password (between 8-128)?");;
-        }
-
-        console.log(charLength);
+          
+       console.log(charLength);
       }
-
+      
+//Function to get booleans
   function getInfo() {      
 
   //Wnat lower case?
@@ -106,8 +101,8 @@ function getLength() {
 
   generateBtn.onclick = function pushInfo () {
     alert("Hello! Let's get started on your password.")
-    var length = getLength();
-    var info = getInfo();   
+    charLength = getLength();
+    getInfo();  
 
   
   }
