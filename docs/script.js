@@ -8,12 +8,13 @@ var generateBtn = document.querySelector("#generate");
   var number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "~"];
 
+  var openA = [];
 
-
+  var trueFalse = [];
+  
 
 //Function to get length
 function getLength() {
-  //Get Length
       var charLength = "";
 
       charLength = prompt("Character length of password (between 8-128)?");
@@ -22,6 +23,7 @@ function getLength() {
         while (charLength < 8 || charLength > 128 || isNaN(charLength)) {
         alert("Please choose and input a number between 8 and 128.");
         charLength = prompt("Character length of password (between 8-128)?");
+        charLength = parseInt(charLength);
         }
           
        console.log(charLength);
@@ -102,29 +104,39 @@ function getLength() {
                 console.log(numericChar);
                 console.log(specialChar);  
 
-                return lowerCase, upperCase, numericChar, specialChar;
+                return [lowerCase, upperCase, numericChar, specialChar];
           
                    
     }
-
+// Function to start process when button is clicked
   generateBtn.onclick = function pushInfo () {
+    
     alert("Hello! Let's get started on your password.")
     charLength = getLength();
-    lowerCase = getInfo();  
     
- //testing this theory
-    if (lowerCase) {
-      console.log("yes");
-      generatePassword(lower);
+    trueFalse = getInfo();  
+    console.log(trueFalse);
+
+    if (trueFalse[0] === true) {
+      openA = openA.concat(lower);
     }
-
-
-  
+    if (trueFalse[1] === true) {
+      openA = openA.concat(upper);
+    }
+    if (trueFalse[2] === true) {
+      openA = openA.concat(number);
+    }
+    if (trueFalse[3] === true) {
+      openA = openA.concat(special);
+    }
+    return openA;
   }
     
 //Function to generate password.
-function generatePassword (array){
-  
+function generatePassword () {
+
+console.log(openA);
+console.log(charLength);
 
 }
 
