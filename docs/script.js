@@ -134,12 +134,13 @@ generateBtn.onclick = function generatePassword() {
 
 //Function to generate password.
 function generatePassword() {
-
+ 
+  var finalWord = [];
 
   for (var i = 0; i < charLength; i++) {
-    console.log(openA[Math.floor(Math.random() * openA.length)]);
+    finalWord.push(openA[Math.floor(Math.random() * openA.length)]);
   }
-
+  return finalWord.join("");
 }
 
 
