@@ -30,7 +30,7 @@ function getTrueFalse() {
   var numericChar = "";
   var specialChar = "";
 
-  //Wnat lower case?
+  //Wan lower case?
   lowerCase = confirm("Include LOWER CASE characters?");
 
   if (lowerCase) {
@@ -62,8 +62,9 @@ function getTrueFalse() {
   } else {
     alert("No SPECIAL characters");
   }
+
   //Boolean while loop
-  if (!lowerCase && !upperCase && !numericChar && !specialChar) {
+  while (!lowerCase && !upperCase && !numericChar && !specialChar) {
     alert("Must chose at least one type of character. Please answer again.");
     lowerCase = confirm("Include LOWER CASE characters?");
     if (lowerCase) {
@@ -99,13 +100,14 @@ function getTrueFalse() {
   return [lowerCase, upperCase, numericChar, specialChar];
 
 }
-// Function to start process when button is clicked
+
+// Function to run functions when button is clicked
 generateBtn.onclick = function generatePassword() {
 
   var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "~"];
+  var special = ["!", "?", "{", "}", "|", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "~", "[", "]", "=", ":", ";", "/", "-"];
 
   alert("Hello! Let's get started on your password.")
 
