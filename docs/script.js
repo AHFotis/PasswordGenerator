@@ -3,12 +3,11 @@ var generateBtn = document.querySelector("#generate");
 
 // Global Variables
 var openA = [];
-var charLength = "";
 
 //Function to get length
 function getLength() {
 
-  charLength = prompt("Character length of password (between 8-128)?");
+  var charLength = prompt("Character length of password (between 8-128)?");
   charLength = parseInt(charLength);
 
   while (charLength < 8 || charLength > 128 || isNaN(charLength)) {
@@ -108,6 +107,9 @@ generateBtn.onclick = function generatePassword() {
   var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   var special = ["!", "?", "{", "}", "|", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "~", "[", "]", "=", ":", ";", "/", "-"];
+
+  // Declared here to reset if Generate Password is pushed again without refreshing.
+  openA = [];
 
   alert("Hello! Let's get started on your password.")
 
