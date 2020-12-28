@@ -10,7 +10,7 @@ You can visit the live application [here](https://ahfotis.github.io/WhatsTheWord
 ## Application Overview
 This application takes in user information through a series of prompts. Users chose:
 
-* The amount of characters (between 8 adn 128)
+* The amount of characters (between 8 and 128)
 * The type of characters to be included. User must choose at least one from:
     * Lower case letters
     * Upper case letters
