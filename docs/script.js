@@ -1,9 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Global Variables
-// var openA = [];
-// var charLength = "";
+// Global length variable
+var charLength = "";
+var openArray = [];
 
 //Function to get length
 function getLength() {
@@ -18,54 +18,48 @@ function getLength() {
   }
 
   alert("You have selected " + length + " characters.")
-  console.log(length);
   return length;
 }
 
-//Function to get booleans
+//Function to get boolean array
 function getTrueFalse() {
-
-  var lowerCase = "";
-  var upperCase = "";
-  var numericChar = "";
-  var specialChar = "";
 
   alert("Let's choose your characters! You must choose at least one type.");
 
-  //Wan lower case?
-  lowerCase = confirm("Include LOWER CASE characters?");
+  //Want lower case?
+  var lowerCase = confirm("Include LOWER CASE characters?");
 
-    if (lowerCase) {
-      alert("You have confirmed LOWER CASE characters.");
-    } else {
-      alert("No LOWER CASE characters");
-    }
+  if (lowerCase) {
+    alert("You have confirmed LOWER CASE characters.");
+  } else {
+    alert("No LOWER CASE characters");
+  }
 
   //Want uppercase?
-  upperCase = confirm("Include UPPER CASE characters?");
+  var upperCase = confirm("Include UPPER CASE characters?");
 
-    if (upperCase) {
-      alert("You have confirmed UPPER CASE characters.");
-    } else {
-      alert("No UPPER CASE characters");
-    }
+  if (upperCase) {
+    alert("You have confirmed UPPER CASE characters.");
+  } else {
+    alert("No UPPER CASE characters");
+  }
 
-  //Want numeric?
-  numericChar = confirm("Include NUMERIC characters?");
+  //Want number??
+  var numericChar = confirm("Include NUMERIC characters?");
 
-    if (numericChar) {
-      alert("You have confirmed NUMERIC characters.");
-    } else {
-      alert("No NUMERIC characters");
-    }
+  if (numericChar) {
+    alert("You have confirmed NUMERIC characters.");
+  } else {
+    alert("No NUMERIC characters");
+  }
+  // Want special character?
+  var specialChar = confirm("Include SPECIAL characters?");
 
-  specialChar = confirm("Include SPECIAL characters?");
-
-    if (specialChar) {
-      alert("You have confirmed SPECIAL characters.");
-    } else {
-      alert("No SPECIAL characters");
-    }
+  if (specialChar) {
+    alert("You have confirmed SPECIAL characters.");
+  } else {
+    alert("No SPECIAL characters");
+  }
 
   //Boolean while loop
   while (!lowerCase && !upperCase && !numericChar && !specialChar) {
@@ -96,60 +90,54 @@ function getTrueFalse() {
     }
 
   }
-  console.log(lowerCase);
-  console.log(upperCase);
-  console.log(numericChar);
-  console.log(specialChar);
 
   return [lowerCase, upperCase, numericChar, specialChar];
 
 }
 
 // Function to run previous functions and return usable array
-generateBtn.onclick = function getArray() {
+generateBtn.onclick = function runGetters() {
 
-var characters = {
-  upper: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
-  lower:["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
-  number: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-  special: ["!", "?", "{", "}", "|", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "~", "[", "]", "=", ":", ";", "/", "-"],
-}
+  var characters = {
+    upper: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+    lower: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
+    number: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    special: ["!", "?", "{", "}", "|", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "~", "[", "]", "=", ":", ";", "/", "-"],
+  }
 
-  // Declared here to reset if Generate Password is pushed again without refreshing.
-  openA = [];
+  // Reset in case button is pressed again without refreshing page.
+  openArray = [];
 
   alert("Hello! Let's get started on your password.")
 
   charLength = getLength();
 
   var trueFalse = getTrueFalse();
-  console.log(trueFalse);
 
   if (trueFalse[0] === true) {
-    openA = openA.concat(characters.lower);
+    openArray = openArray.concat(characters.lower);
   }
   if (trueFalse[1] === true) {
-    openA = openA.concat(characters.upper);
+    openArray = openArray.concat(characters.upper);
   }
   if (trueFalse[2] === true) {
-    openA = openA.concat(characters.number);
+    openArray = openArray.concat(characters.number);
   }
   if (trueFalse[3] === true) {
-    openA = openA.concat(characters.special);
+    openArray = openArray.concat(characters.special);
   }
 
-  console.log(openA);
-  return openA;
+  return openArray;
 
 }
 
 //Function to generate password.
 function generatePassword() {
- 
+
   var finalWord = [];
 
   for (var i = 0; i < charLength; i++) {
-    finalWord.push(openA[Math.floor(Math.random() * openA.length)]);
+    finalWord.push(openArray[Math.floor(Math.random() * openArray.length)]);
   }
   return finalWord.join("");
 }
