@@ -1,5 +1,5 @@
 # What's The Word: Password Generator
-An application to create new, original passwords at the click of a button.
+An application to create original, secure passwords at the click of a button.
 
 ## Link to Deployed Page
 You can visit the live application [here](https://ahfotis.github.io/WhatsTheWord/).
@@ -17,7 +17,7 @@ This application takes in user information through a series of prompts. Users ch
     * Numbers
     * Special characters (base on OWASP Foundation list)
 
-The length is returned, the apporpriate character arrays are concated, and a function featuring a for loop and randomizer returns the password as a string to the generator. While loops also used to keep user from inputing a string for character number and for not choosing at least one character from.
+The length is returned, the apporpriate character arrays are concated, and a function featuring a for loop and randomizer returns the password as a string to the generator. While loops also used to keep user from inputing a string or unusable number for length and for not choosing at least one character form.
 
 ## Project Criteria
 

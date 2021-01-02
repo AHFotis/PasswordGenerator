@@ -52,6 +52,7 @@ function getTrueFalse() {
   } else {
     alert("No NUMERIC characters");
   }
+
   // Want special character?
   var specialChar = confirm("Include SPECIAL characters?");
 
@@ -92,7 +93,6 @@ function getTrueFalse() {
   }
 
   return [lowerCase, upperCase, numericChar, specialChar];
-
 }
 
 // Function to run previous functions and return usable array
@@ -102,7 +102,7 @@ generateBtn.onclick = function runGetters() {
     upper: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
     lower: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
     number: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-    special: ["!", "?", "{", "}", "|", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "~", "[", "]", "=", ":", ";", "/", "-"],
+    special: ["!", "?", "{", "}", "|", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "~", "[", "]", "=", ":", ";", "/", "-", "'"],
   }
 
   // Reset in case button is pressed again without refreshing page.
@@ -111,7 +111,6 @@ generateBtn.onclick = function runGetters() {
   alert("Hello! Let's get started on your password.")
 
   charLength = getLength();
-
   var trueFalse = getTrueFalse();
 
   if (trueFalse[0] === true) {
@@ -128,7 +127,6 @@ generateBtn.onclick = function runGetters() {
   }
 
   return openArray;
-
 }
 
 //Function to generate password.
@@ -139,6 +137,7 @@ function generatePassword() {
   for (var i = 0; i < charLength; i++) {
     finalWord.push(openArray[Math.floor(Math.random() * openArray.length)]);
   }
+
   return finalWord.join("");
 }
 
@@ -149,7 +148,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
