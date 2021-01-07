@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Global length variable
+// Global variables
 var charLength = "";
 var openArray = [];
 
@@ -44,7 +44,7 @@ function getTrueFalse() {
     alert("No UPPER CASE characters");
   }
 
-  //Want number??
+  //Want number?
   var numericChar = confirm("Include NUMERIC characters?");
 
   if (numericChar) {
@@ -90,8 +90,8 @@ function getTrueFalse() {
       alert("No SPECIAL characters");
     }
 
-  }
-
+   }
+   
   return [lowerCase, upperCase, numericChar, specialChar];
 }
 
@@ -113,6 +113,7 @@ generateBtn.onclick = function runGetters() {
   charLength = getLength();
   var trueFalse = getTrueFalse();
 
+
   if (trueFalse[0] === true) {
     openArray = openArray.concat(characters.lower);
   }
@@ -127,15 +128,16 @@ generateBtn.onclick = function runGetters() {
   }
 
   return openArray;
+  
 }
 
 //Function to generate password.
-function generatePassword() {
+function generatePassword(arr) {
 
   var finalWord = [];
 
   for (var i = 0; i < charLength; i++) {
-    finalWord.push(openArray[Math.floor(Math.random() * openArray.length)]);
+    finalWord.push(arr[Math.floor(Math.random() * arr.length)]);
   }
 
   return finalWord.join("");
@@ -144,7 +146,7 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = generatePassword(openArray);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
