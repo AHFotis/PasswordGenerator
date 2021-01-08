@@ -15,9 +15,9 @@ This application takes in user information through a series of prompts. Users ch
     * Lower case letters
     * Upper case letters
     * Numbers
-    * Special characters (base on OWASP Foundation list)
-
-The length is returned, the apporpriate character arrays are concated, and a function featuring a for loop and randomizer returns the password as a string to the generator. While loops also used to keep user from inputing a string or unusable number for length and for not choosing at least one character form.
+    * Special characters (based on OWASP Foundation list)
+* The application returns the information into an array of arrays, randmozies the elements, and loops them into the final password.
+* While loops used to ensure correct user input.
 
 ## Project Criteria
 
